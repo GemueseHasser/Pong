@@ -1,6 +1,5 @@
 package de.jonas;
 
-import de.jonas.menu.Settings;
 import de.jonas.music.PlayBackgroundMusic;
 import de.jonas.pong.BallMovement;
 import de.jonas.pong.BotMovement;
@@ -14,8 +13,6 @@ public class Game {
     public static void main(String[] args) {
         new de.jonas.menu.Variablen();
         new de.jonas.menu.GUI();
-
-        Settings.slider.setValue(1);
 
         new PlayBackgroundMusic();
     }

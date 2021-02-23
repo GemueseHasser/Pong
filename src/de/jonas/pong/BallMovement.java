@@ -16,10 +16,12 @@ public class BallMovement {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                ballX += directionX;
-                ballY += directionY;
+                for (int i = 0; i < de.jonas.menu.Variablen.ballSpeed; i++) {
+                    ballX += directionX;
+                    ballY += directionY;
+                }
             }
-        }, 0, de.jonas.menu.Variablen.ballSpeed);
+        }, 0, 5);
     }
 
 }

@@ -1,20 +1,14 @@
 package de.jonas.menu;
 
+import de.jonas.music.PlayBackgroundMusic;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JSlider;
 
 import java.awt.Color;
-import java.awt.Font;
-
-import de.jonas.music.PlayBackgroundMusic;
 
 public class Settings {
-
-    public static JSlider slider = new JSlider();
-    static JLabel label = new JLabel("Ballgeschwindigkeit: " + slider.getValue(), JLabel.CENTER);
 
     public Settings() {
         new ImageLoader();
@@ -23,32 +17,6 @@ public class Settings {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setLayout(null);
-
-        SettingsDraw draw = new SettingsDraw();
-        draw.setBounds(0, 0, frame.getWidth(), frame.getHeight());
-        draw.setVisible(true);
-
-        label.setForeground(Color.BLACK);
-        label.setBounds(0, 55, frame.getWidth(), 30);
-        label.setFont(new Font("Arial", Font.BOLD, 17));
-
-        slider.setBounds(15, 30, 350, 20);
-        slider.setMaximum(5);
-        slider.setMinimum(1);
-        slider.addChangeListener(changeEvent -> {
-            int value = slider.getValue();
-            if (value == 1) {
-                Variablen.ballSpeed = 5;
-            } else if (value == 2) {
-                Variablen.ballSpeed = 4;
-            } else if (value == 3) {
-                Variablen.ballSpeed = value;
-            } else if (value == 4) {
-                Variablen.ballSpeed = 2;
-            } else if (value == 5) {
-                Variablen.ballSpeed = 1;
-            }
-        });
 
         JButton apply = new JButton("Speichern");
         apply.setBounds(75, 300, 250, 50);
@@ -76,11 +44,8 @@ public class Settings {
             }
         });
 
-        frame.add(slider);
-        frame.add(label);
         frame.add(apply);
         frame.add(sound);
-        frame.add(draw);
         frame.setVisible(true);
     }
 

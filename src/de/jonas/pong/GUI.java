@@ -8,6 +8,7 @@ import java.awt.Color;
 public class GUI {
 
     public GUI() {
+        new CalculateSpeed();
         JFrame frame = new JFrame("Pong");
         frame.setBounds(0, 0, 1000, 800);
         frame.setLocationRelativeTo(null);
